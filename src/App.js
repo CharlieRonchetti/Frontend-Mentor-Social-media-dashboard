@@ -1,102 +1,117 @@
 import './App.css';
+import AccountCard from './AccountCard';
+import OverviewCard from './OverviewCard';
+import { useState } from 'react';
 
 function App() {
+
+  const [isChecked, setIsChecked] = useState(false)
+
+  const checkHandler = () => {
+    setIsChecked(!isChecked)
+  }
+
   return (
-    <div className="App">
-      <header>
+    <div className={`App ${isChecked ? "App-light" : "App-dark"}`}>
+      <header className={isChecked ? "header-light" : "header-dark"}>
         <div className="container header-content">
         <h1>Social Media Dashboard</h1>
         <p>Total Followers: 23,004</p>
         <hr></hr>
         </div>
-      </header>
 
-      <div className="container theme">
-        <p>Dark Mode</p>
-        <div className="switcher">
-          <p>placeholder</p>
+        <div className="container theme">
+          <p>Dark Mode</p>
+          <div className="switcher">
+            <input type="checkbox" checked={isChecked} onChange={checkHandler}/>
+          </div>
         </div>
-      </div>
+      </header>
 
       <main>
         <div className="container accounts">
-          <div className="facebook center">
-            <h2 className="username">@nathanf</h2>
-            <p className="follower-count">1987</p>
-            <p>FOLLOWERS</p>
-            <h3 className="daily-follows">12 Today</h3>
-          </div>
+          <AccountCard username={"@nathanf"}
+            followerCount={"1987"} 
+            followerIncrease={12}
+            followerType={"FOLLOWERS"}
+            platform={"facebook"}
+            getCurrentTheme={isChecked} />
 
-          <div className="twitter center">
-            <h2 className="username">@nathanf</h2>
-            <p className="follower-count">1044</p>
-            <p>FOLLOWERS</p>
-            <h3 className="daily-follows">99 Today</h3>
-          </div>
+          <AccountCard username={"@nathanf"}
+            followerCount={"1044"} 
+            followerIncrease={99}
+            followerType={"FOLLOWERS"}
+            platform={"twitter"}
+            getCurrentTheme={isChecked} />
 
-          <div className="instagram center">
-            <h2 className="username">@realnathanf</h2>
-            <p className="follower-count">11k</p>
-            <p>FOLLOWERS</p>
-            <h3 className="daily-follows">1099 Today</h3>
-          </div>
+          <AccountCard username={"@realnathanf"}
+            followerCount={"11k"} 
+            followerIncrease={1099}
+            followerType={"FOLLOWERS"}
+            platform={"instagram"}
+            getCurrentTheme={isChecked} />
 
-          <div className="youtube center">
-            <h2 className="username">Nathan F.</h2>
-            <p className="follower-count">8239</p>
-            <p>Subscribers</p>
-            <h3 className="daily-follows">144 Today</h3>
-          </div>
+          <AccountCard username={"Nathan F."}
+            followerCount={"8239"} 
+            followerIncrease={-144}
+            followerType={"SUBSCRIBERS"}
+            platform={"youtube"}
+            getCurrentTheme={isChecked} />
         </div>
 
         <div className="container daily-overview">
-          <h2>Overview - Today</h2>
+          <h2 className="daily-overview-title">Overview - Today</h2>
           <div className="daily-stats">
-            <div className="card">
-              <div className="card-top-row row">
-                <h2 className="card-title">Page Views</h2>
-                <p>Logo Placeholder</p>
-              </div>
-              <div className="card-bottom-row row">
-                <p className="card-statistic">87</p>
-                <p>3%</p>
-              </div>
-            </div>
+            <OverviewCard cardTitle={"Page Views"}
+              logoImage={"facebook"}
+              cardStatistic={87}
+              cardPercentage={3}
+              getCurrentTheme={isChecked} />
+
+            <OverviewCard cardTitle={"Likes"}
+              logoImage={"facebook"}
+              cardStatistic={52}
+              cardPercentage={-2}
+              getCurrentTheme={isChecked} />
+
+            <OverviewCard cardTitle={"Likes"}
+              logoImage={"instagram"}
+              cardStatistic={5462}
+              cardPercentage={2257}
+              getCurrentTheme={isChecked} />
+
+            <OverviewCard cardTitle={"Profile Views"}
+              logoImage={"instagram"}
+              cardStatistic={"52k"}
+              cardPercentage={1375}
+              getCurrentTheme={isChecked} />
+
+            <OverviewCard cardTitle={"Retweets"}
+              logoImage={"twitter"}
+              cardStatistic={117}
+              cardPercentage={303}
+              getCurrentTheme={isChecked} />
+
+            <OverviewCard cardTitle={"Likes"}
+              logoImage={"twitter"}
+              cardStatistic={507}
+              cardPercentage={553}
+              getCurrentTheme={isChecked} />
+
+            <OverviewCard cardTitle={"Likes"}
+              logoImage={"youtube"}
+              cardStatistic={107}
+              cardPercentage={19}
+              getCurrentTheme={isChecked} />
+
+            <OverviewCard cardTitle={"Total Views"}
+              logoImage={"youtube"}
+              cardStatistic={1407}
+              cardPercentage={12}
+              getCurrentTheme={isChecked} />
           </div>
         </div>
       </main>
-
-      Page Views
-      87
-      3%
-
-      Likes
-      52
-      2%
-
-      Likes
-      5462
-      2257%
-
-      Profile Views
-      52k
-      1375%
-
-      Retweets
-      117
-      303%
-
-      Likes
-      507
-      553%
-
-      Likes
-      107
-      19%
-
-      Total Views
-      1407
-      12%
       
       <div class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>. 

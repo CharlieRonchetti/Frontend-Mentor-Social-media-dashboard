@@ -1,0 +1,77 @@
+.overview-card {
+    width: 100%;
+    margin-bottom: 1.25rem;
+    border-radius: 5px;
+    padding: 1.25rem 1.5rem;
+}
+
+img {
+    height: 100%;
+}
+
+.overview-card-top-row {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.overview-card-title {
+    font-size: .8rem;
+    font-weight: 700;
+    color: hsl(228, 34%, 66%);
+}
+
+.overview-card-bottom-row {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.overview-card-statistic {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.overview-card-percentage {
+    align-items: center;
+    gap: .25rem;
+    font-size: .8rem;
+    font-weight: 400;
+}
+
+.card-percent-decrease {
+    color: hsl(356, 69%, 56%);
+}
+
+.card-percent-increase {
+    color: hsl(163, 72%, 41%);
+}
+
+.light-theme {
+    background-color: hsl(227, 47%, 96%);
+}
+
+.dark-theme {
+    background-color: hsl(228, 28%, 20%);
+}
+
+.light-theme .overview-card-title {
+    color: hsl(228, 12%, 44%)
+}
+
+.dark-theme .overview-card-title {
+    color: hsl(228, 34%, 66%);
+}
+
+.light-theme:hover {
+    background-color: hsl(227, 47%, 90%);
+}
+
+.dark-theme:hover {
+    background-color: hsl(228, 28%, 30%);
+}
+
+@media (min-width: 650px) {
+    .overview-card {
+        margin-bottom: 0;
+    }
+}

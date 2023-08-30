@@ -1,0 +1,103 @@
+.account-card {
+    width: 100%;
+    margin-bottom: 1.25rem;
+    border-radius: 5px;
+    padding-bottom: 1.5rem;
+}
+
+.account-card-highlight {
+    height: .3rem;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.username {
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.username-row {
+    gap: .5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.follower-count {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.follower-type {
+    font-size: .8rem;
+    letter-spacing: .35rem;
+    margin-bottom: 1.5rem;
+}
+
+.follower-increase-row {
+    align-items: center;
+    gap: .25rem;
+}
+
+.follower-increase-row img {
+    height: 100%;
+}
+
+.daily-follows {
+    font-size: .8rem;
+}
+
+.facebook {
+    background-color: hsl(208, 92%, 53%);
+}
+
+.instagram {
+    background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%))
+}
+
+.twitter {
+    background-color: hsl(203, 89%, 53%)
+}
+
+.youtube {
+    background-color: hsl(348, 97%, 39%);
+}
+
+.decrease {
+    color: hsl(356, 69%, 56%);
+}
+
+.increase {
+    color: hsl(163, 72%, 41%);
+}
+
+.light-theme {
+    background-color: hsl(227, 47%, 96%);
+}
+
+.dark-theme {
+    background-color: hsl(228, 28%, 20%);
+}
+
+.light-theme .username, .follower-type {
+    color: hsl(228, 12%, 44%)
+}
+
+.dark-theme .username, .follower-type {
+    color: hsl(228, 34%, 66%);
+}
+
+.light-theme:hover {
+    background-color: hsl(227, 47%, 90%);
+}
+
+.dark-theme:hover {
+    background-color: hsl(228, 28%, 30%);
+}
+
+@media (min-width: 650px) {
+    .account-card {
+        margin-bottom: 0;
+    }
+}
